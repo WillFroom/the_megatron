@@ -28,7 +28,7 @@ class Scene:
         self.directions.append(StageDescription(description))
 
     def __repr__(self):
-        return '\n'.join(direction.__repr__() for direction in self.directions)
+        return '\n'.join(repr(direction) for direction in self.directions)
 
 @dataclass
 class Episode():
@@ -39,4 +39,4 @@ class Episode():
         self.scenes.append(Scene([]))
 
     def __repr__(self):
-        return f'\n\nEpisode: {self.name}\n\n' + '\n\n'.join(scene.__repr__() for scene in self.scenes)
+        return f'\n\nEpisode: {self.name}\n\n' + '\n\n'.join(repr(scene) for scene in self.scenes)

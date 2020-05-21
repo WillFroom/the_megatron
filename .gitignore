@@ -1,3 +1,4 @@
 *.code-workspace
 *.pyc
+.mypy_cache/
 .vscode/

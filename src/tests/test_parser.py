@@ -1,5 +1,5 @@
-from the_megatron.parser.parser import parse_page
+from the_megatron.parser.parser import parse_all
 
 if __name__ == '__main__':
-    parse_page(
-        'https://transcripts.fandom.com/wiki/Sophie%27s_Parents')
+    episodes = parse_all('https://transcripts.fandom.com/wiki/Peep_Show')
+    print(episodes)

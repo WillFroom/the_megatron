@@ -7,9 +7,15 @@ class Dialogue:
     name: str
     speech: str
 
+    def __repr__(self):
+        return f"{self.name}: {self.speech}"
+
 @dataclass
 class StageDescription:
     description: str
+
+    def __repr__(self):
+        return f"[{self.description}]"
 
 @dataclass
 class Scene:
@@ -21,9 +27,16 @@ class Scene:
     def add_stage_description(self, description):
         self.directions.append(StageDescription(description))
 
+    def __repr__(self):
+        return '\n'.join(direction.__repr__() for direction in self.directions)
+
 @dataclass
 class Episode():
+    name: str
     scenes: List[Scene]
 
     def add_scene(self):
         self.scenes.append(Scene([]))
+
+    def __repr__(self):
+        return f'\n\nEpisode: {self.name}\n\n' + '\n\n'.join(scene.__repr__() for scene in self.scenes)
